@@ -1,174 +1,530 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeshwanth Kumar Domala | Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 50px;
-            max-width: 800px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            animation: fadeIn 1s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid #667eea;
-            margin-bottom: 20px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .profile-img:hover {
-            transform: scale(1.05) rotate(5deg);
-        }
-        
-        h1 {
-            color: #333;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        
-        .tagline {
-            color: #667eea;
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        
-        .bio {
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-        
-        .skill-tag {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            transition: transform 0.2s ease;
-        }
-        
-        .skill-tag:hover {
-            transform: translateY(-3px);
-        }
-        
-        .links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
-        }
-        
-        .btn-secondary {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
-        }
-        
-        .btn-secondary:hover {
-            background: #667eea;
-            color: white;
-        }
-        
-        @media (max-width: 600px) {
-            .container {
-                padding: 30px 20px;
-            }
-            h1 {
-                font-size: 2em;
-            }
-            .tagline {
-                font-size: 1em;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YESHwanth — Creative Technologist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Light theme */
+      --light-bg: #fafaff;
+      --light-bg-secondary: #f0f0f5;
+      --light-text: #0a0a0f;
+      --light-text-muted: #6b6b7b;
+      --light-accent: #ff5c7a;
+      --light-glass: rgba(255, 255, 255, 0.7);
+      
+      /* Dark theme */
+      --dark-bg: #0a0a0f;
+      --dark-bg-secondary: #16161d;
+      --dark-text: #fafaff;
+      --dark-text-muted: #a8a8b8;
+      --dark-accent: #ff7b93;
+      --dark-glass: rgba(22, 22, 29, 0.7);
+      
+      /* Gradients */
+      --gradient-1: linear-gradient(135deg, #ff5c7a 0%, #ff9340 100%);
+      --gradient-2: linear-gradient(135deg, #40a9ff 0%, #9b5cff 100%);
+      --gradient-3: linear-gradient(135deg, #00d38f 0%, #00e0ff 100%);
+      --gradient-4: linear-gradient(135deg, #ffb400 0%, #ff6bd5 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+      transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                  color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    body.theme-light {
+      background-color: var(--light-bg);
+      color: var(--light-text);
+    }
+
+    body.theme-dark {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+
+    /* Animated gradient background orbs */
+    .bg-orbs {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+      opacity: 0.15;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .orb-1 {
+      width: 500px;
+      height: 500px;
+      background: var(--gradient-1);
+      top: -10%;
+      left: -10%;
+      animation-delay: 0s;
+    }
+
+    .orb-2 {
+      width: 400px;
+      height: 400px;
+      background: var(--gradient-2);
+      bottom: -10%;
+      right: -5%;
+      animation-delay: -7s;
+    }
+
+    .orb-3 {
+      width: 350px;
+      height: 350px;
+      background: var(--gradient-3);
+      top: 40%;
+      right: 20%;
+      animation-delay: -14s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+      33% {
+        transform: translate(30px, -30px) scale(1.1);
+      }
+      66% {
+        transform: translate(-20px, 20px) scale(0.9);
+      }
+    }
+
+    /* Header Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.5rem 3rem;
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      transition: background-color 0.3s ease;
+    }
+
+    body.theme-light header {
+      background: var(--light-glass);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    body.theme-dark header {
+      background: var(--dark-glass);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .theme-toggle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      backdrop-filter: blur(10px);
+    }
+
+    body.theme-light .theme-toggle {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--light-text);
+    }
+
+    body.theme-dark .theme-toggle {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--dark-text);
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1) rotate(20deg);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Eyebrow text */
+    .eyebrow {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    }
+
+    body.theme-light .eyebrow {
+      color: var(--light-text-muted);
+    }
+
+    body.theme-dark .eyebrow {
+      color: var(--dark-text-muted);
+    }
+
+    /* Main title */
+    .hero-title {
+      font-size: clamp(3.5rem, 15vw, 12rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 0.85;
+      margin-bottom: 1rem;
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.1em;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out 0.4s forwards, 
+                 heartbeatPro 2s ease-in-out 1.2s infinite;
+    }
+
+    .hero-title span {
+      display: inline-block;
+      position: relative;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero-title span:hover {
+      transform: translateY(-8px) rotate(-3deg);
+    }
+
+    /* Multicolor letters with gradients */
+    .hero-title span:nth-child(1) { background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-title span:nth-child(2) { background: var(--gradient-4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-title span:nth-child(3) { background: var(--gradient-3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-title span:nth-child(4) { background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-title span:nth-child(5) { background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-title span:nth-child(6) { background: var(--gradient-4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-title span:nth-child(7) { background: var(--gradient-3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-title span:nth-child(8) { background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-title span:nth-child(9) { background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    @keyframes heartbeatPro {
+      0%, 60%, 100% { transform: scale(1); }
+      10% { transform: scale(1.05); }
+      20% { transform: scale(0.98); }
+      30% { transform: scale(1.08); }
+      40% { transform: scale(1); }
+    }
+
+    /* Subtitle */
+    .hero-subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      font-weight: 400;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 2rem auto;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out 0.6s forwards;
+    }
+
+    body.theme-light .hero-subtitle {
+      color: var(--light-text-muted);
+    }
+
+    body.theme-dark .hero-subtitle {
+      color: var(--dark-text-muted);
+    }
+
+    /* Loading indicator */
+    .loading-indicator {
+      margin-top: 3rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out 0.8s forwards;
+    }
+
+    body.theme-light .loading-indicator {
+      color: var(--light-text-muted);
+    }
+
+    body.theme-dark .loading-indicator {
+      color: var(--dark-text-muted);
+    }
+
+    .loading-dots {
+      display: flex;
+      gap: 0.35rem;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+
+    .dot:nth-child(2) { animation-delay: 0.2s; }
+    .dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* CTA Button */
+    .cta-button {
+      margin-top: 3rem;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out 1s forwards;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+    }
+
+    body.theme-light .btn {
+      background: var(--light-text);
+      color: var(--light-bg);
+    }
+
+    body.theme-dark .btn {
+      background: var(--dark-text);
+      color: var(--dark-bg);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-1);
+      transition: left 0.5s ease;
+      z-index: -1;
+    }
+
+    .btn:hover::before {
+      left: 0;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out 1.2s forwards, bounce 2s ease-in-out 2s infinite;
+    }
+
+    .scroll-indicator svg {
+      width: 24px;
+      height: 24px;
+      opacity: 0.5;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(10px); }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem 1.5rem;
+      }
+
+      .hero {
+        padding: 1rem;
+      }
+
+      .hero-title {
+        font-size: clamp(2.5rem, 12vw, 6rem);
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
-<body>
-    <div class="container">
-        <img src="https://github.com/yeshwanthkumardomala.png" alt="Yeshwanth Kumar Domala" class="profile-img">
-        
-        <h1>Yeshwanth Kumar Domala</h1>
-        <p class="tagline">Educator · Coder · Maker · Tinkerer</p>
-        
-        <p class="bio">
-            A jack‑of‑all‑trades bouncing between teaching, robotics, game dev, and AI – not exactly the master of any one thing, but dangerously curious about all of them. 
-            <br><br>
-            Currently teaching computer science at <strong>Jawahar Navodaya Vidyalaya</strong>, tinkering at <strong>BRAIN NODES</strong>, and building tools that make learning fun.
-        </p>
-        
-        <div class="skills">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Robotics & IoT</span>
-            <span class="skill-tag">Game Dev</span>
-            <span class="skill-tag">AI/ML</span>
-            <span class="skill-tag">GDScript</span>
-            <span class="skill-tag">Arduino</span>
-            <span class="skill-tag">TypeScript</span>
-            <span class="skill-tag">Educational Tools</span>
+
+<body class="theme-light">
+  <!-- Background orbs -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <nav class="nav-container">
+      <div class="logo">YK</div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☾</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Creative Technologist × Educator</div>
+      
+      <h1 class="hero-title" aria-label="Yeshwanth">
+        <span>Y</span><span>E</span><span>S</span><span>H</span><span>w</span><span>a</span><span>n</span><span>t</span><span>h</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Building immersive digital experiences at the intersection of code, design, and AI
+      </p>
+
+      <div class="loading-indicator">
+        <span>Loading creativity</span>
+        <div class="loading-dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
         </div>
-        
-        <div class="links">
-            <a href="https://github.com/yeshwanthkumardomala" class="btn btn-primary" target="_blank">View GitHub</a>
-            <a href="mailto:yeshwanthkumardomala@gmail.com" class="btn btn-secondary">Get in Touch</a>
-        </div>
+      </div>
+
+      <div class="cta-button">
+        <a href="#" class="btn">
+          <span>Explore Work</span>
+          <span>→</span>
+        </a>
+      </div>
     </div>
+
+    <div class="scroll-indicator">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M19 12l-7 7-7-7"/>
+      </svg>
+    </div>
+  </main>
+
+  <script>
+    // Theme toggle
+    const body = document.body;
+    const toggleBtn = document.getElementById('themeToggle');
+    
+    const savedTheme = localStorage.getItem('yesh-theme');
+    if (savedTheme === 'dark') {
+      body.classList.remove('theme-light');
+      body.classList.add('theme-dark');
+      toggleBtn.textContent = '☀';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const isDark = body.classList.toggle('theme-dark');
+      body.classList.toggle('theme-light', !isDark);
+      toggleBtn.textContent = isDark ? '☀' : '☾';
+      localStorage.setItem('yesh-theme', isDark ? 'dark' : 'light');
+    });
+
+    // Smooth reveal on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.hero-content > *').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
