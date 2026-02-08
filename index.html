@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeshwanth Kumar Domala | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 800px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #667eea;
+            margin-bottom: 20px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .bio {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: transform 0.2s ease;
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-3px);
+        }
+        
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .tagline {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://github.com/yeshwanthkumardomala.png" alt="Yeshwanth Kumar Domala" class="profile-img">
+        
+        <h1>Yeshwanth Kumar Domala</h1>
+        <p class="tagline">Educator · Coder · Maker · Tinkerer</p>
+        
+        <p class="bio">
+            A jack‑of‑all‑trades bouncing between teaching, robotics, game dev, and AI – not exactly the master of any one thing, but dangerously curious about all of them. 
+            <br><br>
+            Currently teaching computer science at <strong>Jawahar Navodaya Vidyalaya</strong>, tinkering at <strong>BRAIN NODES</strong>, and building tools that make learning fun.
+        </p>
+        
+        <div class="skills">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Robotics & IoT</span>
+            <span class="skill-tag">Game Dev</span>
+            <span class="skill-tag">AI/ML</span>
+            <span class="skill-tag">GDScript</span>
+            <span class="skill-tag">Arduino</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Educational Tools</span>
+        </div>
+        
+        <div class="links">
+            <a href="https://github.com/yeshwanthkumardomala" class="btn btn-primary" target="_blank">View GitHub</a>
+            <a href="mailto:yeshwanthkumardomala@gmail.com" class="btn btn-secondary">Get in Touch</a>
+        </div>
+    </div>
+</body>
+</html>
